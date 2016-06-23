@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>{% block title %}{% endblock %}</title>
+	{% load compress %}
+	{% load staticfiles %}
+	{% compress css %}
+	<link rel="stylesheet" type="text/x-scss" href="{% static "sassy/css/style.scss" %}">
+	{% endcompress %}
+</head>
+<body>
+{% block content %}
+{% endblock %}
+</body>
+</html>

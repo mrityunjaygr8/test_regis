@@ -1,0 +1,9 @@
+*.py~
+*.pyc
+*.sqlite3
+*.txt~
+env
+staticfiles
+CACHE
+venv
+migrations
