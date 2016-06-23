@@ -4,6 +4,16 @@
 {% block title %}{% trans "Log in" %}{% endblock %}
 
 {% block content %}
+<h2>For social login options</h2>
+<ul>
+    <li>
+       <a href="{% url 'social:begin' 'facebook' %}?next=/accounts/profile">Login with Facebook</a>
+     </li>
+     <li>
+       <a href="{% url 'social:begin' 'google-oauth2' %}?next=/accounts/profile">Login with Google</a>
+     </li>
+</ul>
+
 <form method="post" action="">
     {% csrf_token %}
     {{ form.as_p }}

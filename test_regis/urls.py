@@ -15,9 +15,13 @@ Including another URLconf
 """
 from django.conf.urls import url, include
 from django.contrib import admin
-
+import regis 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'regis/', include('regis.urls')),
     url(r'sassy/', include('sassy.urls')),
+    url('', include('social.apps.django_app.urls', namespace='social')),
+    url(r'^accounts/profile/', regis.views.profile, name = "profile"),
+    url(r'^accounts/register/$', regis.regbackend.MyRegistrationView.as_view(), name = 'registration_register'),
+    url(r'^accounts/', include('registration.backends.default.urls')),
     ]
